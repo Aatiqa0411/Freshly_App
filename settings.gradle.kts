@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Freshly E-Comerce"
+rootProject.name = "Freshly"
 include(":app")
+ 

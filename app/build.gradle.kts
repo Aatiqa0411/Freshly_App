@@ -3,12 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.freshlye_comerce"
+    namespace = "com.example.freshly"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.freshlye_comerce"
-        minSdk = 24
+        applicationId = "com.example.freshly"
+        minSdk = 26
+        //noinspection OldTargetApi
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -37,14 +38,18 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.room.common.jvm)
-    implementation(libs.room.common)
-    implementation(libs.room.runtime.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    val room_version = "2.6.1"
 
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
+    // Room Dependencies
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
+
+    // TabLayout Dependencies
+    implementation(libs.material.v180)
+    implementation(libs.viewpager2)
+
+    // JSON Dependencies
+    implementation(libs.gson)
 }
